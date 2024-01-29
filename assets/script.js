@@ -41,6 +41,8 @@ function changerImage() {
 }
 
 //FOnction pour mettre a jour les dots
+const Dots = [];
+console.log(Dots);
 
 function mouvementDots() {
 	dots.innerHTML = '';
@@ -50,7 +52,7 @@ function mouvementDots() {
 		if (i === numeroSlide) {
 			dot.className = 'dot active'
 		} else{
-			dot.className = dot;
+			dot.className = 'dot';
 		}
 		dots.appendChild(dot) //appenChild sert a rajouté un noeud à la fin de liste d'enfant d'un noeud parent spécifié
 
