@@ -32,8 +32,12 @@ let numeroSlide = 0;
 // Fonction pour mettre a jour le carroussel 
 
 function changerImage() {
-	bannerImg.src = slides[numeroSlide].image;
+	bannerImg.src =`./assets/images/slideshow/${slides[numeroSlide].image}`;
 	bannerImg.alt = slides[numeroSlide].tagLine;
+	const textSlide = document.querySelector('#banner p');
+	textSlide.innerHTML = slides[numeroSlide].tagLine;
+
+	mouvementDots()
 }
 
 //FOnction pour mettre a jour les dots
@@ -49,6 +53,9 @@ function mouvementDots() {
 			dot.className = dot;
 		}
 		dots.appendChild(dot) //appenChild sert a rajouté un noeud à la fin de liste d'enfant d'un noeud parent spécifié
+
+		const allDots = document.querySelectorAll('.dot');
+		allDots[numeroSlide].classList.add('active')
 	}
 }
 
