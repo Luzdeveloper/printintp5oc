@@ -61,7 +61,7 @@ function mouvementDots() {
 //Fonction pour passer a l'image suivante 
 
 function imageSuivante() {
-	if (numeroSlide < slides.length - 1) {
+	if (numeroSlide < slides.length -1) {
 		numeroSlide++;
 	} else {
 		numeroSlide = 0;
@@ -70,10 +70,21 @@ function imageSuivante() {
 	mouvementDots()
 }
 
+function imagePrecedente() {
+	if (numeroSlide > 0) {
+		numeroSlide--;
+	} else {
+		numeroSlide = slides.length
+	} 
+	changerImage()
+	mouvementDots()
+}
+
+
 
 //Ajout eventlistner pour les clics sur les fleches 
 
-arrow_left.addEventListener('click', imageSuivante);
+arrow_left.addEventListener('click', imagePrecedente);
 arrow_right.addEventListener('click', imageSuivante);
 
 //Reinitialisation des images et des dots 
