@@ -74,7 +74,7 @@ function imagePrecedente() {
 	if (numeroSlide > 0) {
 		numeroSlide--;
 	} else {
-		numeroSlide = slides.length
+		numeroSlide = slides.length -1
 	} 
 	changerImage()
 	mouvementDots()
