@@ -45,20 +45,17 @@ const Dots = [];
 console.log(Dots);
 
 function mouvementDots() {
-	dots.innerHTML = '';
-	for (let i = 0; i < slides.length; i++) {
-		const dot = document.createElement('span');
-		// Ajout de la class 'active' au dot correspondant a l image active
-		if (i === numeroSlide) {
-			dot.className = 'dot active'
-		} else{
-			dot.className = 'dot';
-		}
-		dots.appendChild(dot) //appenChild sert a rajouté un noeud à la fin de liste d'enfant d'un noeud parent spécifié
+    dots.innerHTML = '';
+    for (let i = 0; i < slides.length; i++) {
+            const dot = document.createElement('span');
+            dot.className = 'dot';
+            if (i === numeroSlide) {
+                    dot.classList.add('active');
+            }
+            
 
-		const allDots = document.querySelectorAll('.dot');
-		allDots[numeroSlide].classList.add('active')
-	}
+            dots.appendChild(dot);
+    }
 }
 
 //Fonction pour passer a l'image suivante 
